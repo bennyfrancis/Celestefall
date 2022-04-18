@@ -1,4 +1,4 @@
-# Celestefall-Physics-by-Benny-Francis
+# Celestefall
 Platformer movement/collision and moving platforms based on Celeste and Towerfall physics for GameMaker.
 
 Credit to Maddy Thorson for the original code concept which  I have converted to work with GameMaker. Please refer to their article for an explanation of how this approach works: 
