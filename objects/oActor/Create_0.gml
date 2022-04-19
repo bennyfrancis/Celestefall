@@ -57,7 +57,3 @@ function collideY() {
 	yspd_remainder = 0;
 }
 
-//MISC\\
-function on_ground() {
-	return (place_meeting(x, y+1, oSolid));	
-}
