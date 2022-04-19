@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Parents",
-    "path": "folders/Objects/Parents.yy",
+    "name": "Celestefall",
+    "path": "folders/Celestefall.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_solid",
