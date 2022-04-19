@@ -1,39 +1,50 @@
-//INPUT\\
-kLeft	= keyboard_check(vk_left)		|| keyboard_check(ord("A"));
-kRight	= keyboard_check(vk_right)		|| keyboard_check(ord("D"));
-kJump	= keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"));
+#region Input
 
-//RUN\\
-var _dir = kRight - kLeft;
-xspd = 3*_dir;
 
-//GRAVITY\\
-yspd = min(yspd+grav, maxfallspd);
+	kLeft	= keyboard_check(vk_left)		|| keyboard_check(ord("A"));
+	kRight	= keyboard_check(vk_right)		|| keyboard_check(ord("D"));
+	kJump	= keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"));
 
-//JUMPING\\
-if (on_ground() && kJump) {
-	yspd = jumpspd;
-}
 
-//MOVE AND COLLIDE\\
-moveX(xspd,collideX);
-moveY(yspd,collideY);
+#endregion
+#region Movement
 
-//SPRITE HANDLING\\
-if (_dir != 0) {
-	image_xscale = _dir;
-	sprite_index = sPlayer_run;	
-}
 
-if (on_ground()) {
-	if (xspd == 0 && _dir == 0) {
-		sprite_index = sPlayer_idle;
+	var _dir = kRight - kLeft;
+	xspd = 3 * _dir;
+
+	// Gravity
+	yspd = min(yspd+grav, maxfallspd);
+
+	// Jumping
+	if (on_ground() && kJump) {
+		yspd = jumpspd;
 	}
-} else {
-	if (yspd < 0) {
-		sprite_index = sPlayer_jump;
+
+	// Move and collide
+	moveX(xspd);
+	moveY(yspd, function(_inst) {
+		show_debug_message("Vertical collision with: " + object_get_name(_inst.object_index));
+	});
+	
+
+#endregion
+#region Animation
+
+
+	if (_dir != 0) {
+		image_xscale = _dir;
+		sprite_index = sPlayer_run;	
+	}
+
+	if (on_ground()) {
+		if (xspd == 0 && _dir == 0) {
+			sprite_index = sPlayer_idle;
+		}
 	} else {
-		sprite_index = sPlayer_fall;
+		sprite_index = yspd < 0 ? sPlayer_jump : sPlayer_fall;
 	}
-}
+	
+
+#endregion
 
