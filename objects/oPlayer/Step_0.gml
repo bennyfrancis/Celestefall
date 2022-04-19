@@ -24,6 +24,7 @@
 	// Move and collide
 	moveX(xspd);
 	moveY(yspd, function(_inst) {
+		collideY();
 		show_debug_message("Vertical collision with: " + object_get_name(_inst.object_index));
 	});
 	
