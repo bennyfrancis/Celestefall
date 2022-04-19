@@ -1,18 +1,15 @@
 {
   "spriteId": {
-    "name": "sPlayer_idle",
-    "path": "sprites/sPlayer_idle/sPlayer_idle.yy",
+    "name": "sSolid_mover",
+    "path": "sprites/sSolid_mover/sSolid_mover.yy",
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": {
-    "name": "sPlayer_idle",
-    "path": "sprites/sPlayer_idle/sPlayer_idle.yy",
-  },
+  "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "oActor",
-    "path": "objects/oActor/oActor.yy",
+    "name": "oSolid",
+    "path": "objects/oSolid/oSolid.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -27,8 +24,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -37,7 +33,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oPlayer",
+  "name": "oSolid_mover",
   "tags": [],
   "resourceType": "GMObject",
 }

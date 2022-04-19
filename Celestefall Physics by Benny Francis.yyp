@@ -1,8 +1,22 @@
 {
   "resources": [
+    {"id":{"name":"sPlayer_fall","path":"sprites/sPlayer_fall/sPlayer_fall.yy",},"order":3,},
+    {"id":{"name":"sPlatformReverse","path":"sprites/sPlatformReverse/sPlatformReverse.yy",},"order":1,},
+    {"id":{"name":"sSolid_mover","path":"sprites/sSolid_mover/sSolid_mover.yy",},"order":2,},
+    {"id":{"name":"tTileset","path":"tilesets/tTileset/tTileset.yy",},"order":1,},
+    {"id":{"name":"sTiles","path":"sprites/sTiles/sTiles.yy",},"order":0,},
+    {"id":{"name":"sPlayer_run","path":"sprites/sPlayer_run/sPlayer_run.yy",},"order":1,},
     {"id":{"name":"oActor","path":"objects/oActor/oActor.yy",},"order":0,},
     {"id":{"name":"oSolid","path":"objects/oSolid/oSolid.yy",},"order":1,},
+    {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":3,},
+    {"id":{"name":"sBackground","path":"sprites/sBackground/sBackground.yy",},"order":0,},
+    {"id":{"name":"oSolid_mover","path":"objects/oSolid_mover/oSolid_mover.yy",},"order":4,},
+    {"id":{"name":"oPlatformReverse","path":"objects/oPlatformReverse/oPlatformReverse.yy",},"order":5,},
+    {"id":{"name":"sSolid","path":"sprites/sSolid/sSolid.yy",},"order":0,},
+    {"id":{"name":"sPlayer_idle","path":"sprites/sPlayer_idle/sPlayer_idle.yy",},"order":0,},
+    {"id":{"name":"sClouds","path":"sprites/sClouds/sClouds.yy",},"order":1,},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":2,},
+    {"id":{"name":"sPlayer_jump","path":"sprites/sPlayer_jump/sPlayer_jump.yy",},"order":2,},
     {"id":{"name":"rDemo","path":"rooms/rDemo/rDemo.yy",},"order":0,},
   ],
   "Options": [
@@ -36,6 +50,9 @@
     {"folderPath":"folders/Animation Curves.yy","order":12,"resourceVersion":"1.0","name":"Animation Curves","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Notes.yy","order":13,"resourceVersion":"1.0","name":"Notes","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Extensions.yy","order":14,"resourceVersion":"1.0","name":"Extensions","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Player.yy","order":0,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Solids.yy","order":1,"resourceVersion":"1.0","name":"Solids","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Background.yy","order":2,"resourceVersion":"1.0","name":"Background","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
