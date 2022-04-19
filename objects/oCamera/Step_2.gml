@@ -11,11 +11,7 @@ if (instance_exists(follow)) {
 	
 		//move camera to new object position
 		_curX = lerp(_curX,_xTo,_movespd);
-		_curY = lerp(_curY,_yTo,_movespd);
-	
-		_curX = (round(_curX*ratio)) / ratio;
-		_curY = (round(_curY*ratio)) / ratio;
-		
+		_curY = lerp(_curY,_yTo,_movespd);		
 	}
 	
 	camera_set_view_pos(view,_curX,_curY);

@@ -7,6 +7,5 @@ view_height = camera_get_view_height(view);
 
 display_set_gui_size(view_width,view_height);
 window_set_size(view_width*2,view_height*2);
-ratio = 4;
 
 follow = oPlayer;
