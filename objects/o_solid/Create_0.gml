@@ -29,6 +29,7 @@
 
 #region Movement and collision
 
+	//Note: movement for solids should normally be executed in the Begin Step event
 	//pixel by pixel movement and collision checks, carrying fractional remainders to next frame
 	//first try and push any actors (if an overlap between an actor and moving solid occurs, move actor to the appropriate leading edge)
 	//then carry any riding actors

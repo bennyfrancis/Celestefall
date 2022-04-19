@@ -32,15 +32,15 @@
 
 	if (_dir != 0) {
 		image_xscale = _dir;
-		sprite_index = sPlayer_run;	
+		sprite_index = s_player_run;	
 	}
 
 	if (on_ground()) {
 		if (xspd == 0 && _dir == 0) {
-			sprite_index = sPlayer_idle;
+			sprite_index = s_player_idle;
 		}
 	} else {
-		sprite_index = yspd < 0 ? sPlayer_jump : sPlayer_fall;
+		sprite_index = yspd < 0 ? s_player_jump : s_player_fall;
 	}
 	
 #endregion
