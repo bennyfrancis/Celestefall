@@ -1,0 +1,1 @@
+other.dir = -other.dir;

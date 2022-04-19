@@ -5,6 +5,8 @@ xspd_remainder = 0;
 yspd = 0;
 yspd_remainder = 0;
 
+dir = 1;
+
 //MOVEMENT FUNCTIONS\\
 function moveX(_xspd,collision_event = function() {}) {
 	xspd_remainder += _xspd;
@@ -57,3 +59,25 @@ function collideY() {
 	yspd_remainder = 0;
 }
 
+//check to see if the actor is riding a given solid
+//add additional parameters here for actions such as clinging, wall sliding, etc
+function is_riding(solid) {
+	//when on top
+	if (place_meeting(x,y+1,solid)) {
+		return true;
+	}//when underneath
+	else if (place_meeting(x,y-1,solid) && sign(solid.yspd) == 1) {
+		return true;
+	}// when moving the same direction horizontally
+	else if (place_meeting(x+sign(solid.xspd),y,solid) && sign(xspd) == sign(solid.xspd))
+	{
+		return true;
+	} else {
+		return false;
+	}
+}
+	
+//handle actor stuck between mover and solid
+function squash() {
+	
+}

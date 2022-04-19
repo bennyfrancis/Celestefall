@@ -1,6 +1,8 @@
 {
   "resources": [
     {"id":{"name":"sPlayer_fall","path":"sprites/sPlayer_fall/sPlayer_fall.yy",},"order":3,},
+    {"id":{"name":"sPlatformReverse","path":"sprites/sPlatformReverse/sPlatformReverse.yy",},"order":1,},
+    {"id":{"name":"sSolid_mover","path":"sprites/sSolid_mover/sSolid_mover.yy",},"order":2,},
     {"id":{"name":"tTileset","path":"tilesets/tTileset/tTileset.yy",},"order":1,},
     {"id":{"name":"sTiles","path":"sprites/sTiles/sTiles.yy",},"order":0,},
     {"id":{"name":"sPlayer_run","path":"sprites/sPlayer_run/sPlayer_run.yy",},"order":1,},
@@ -8,6 +10,8 @@
     {"id":{"name":"oSolid","path":"objects/oSolid/oSolid.yy",},"order":1,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":3,},
     {"id":{"name":"sBackground","path":"sprites/sBackground/sBackground.yy",},"order":0,},
+    {"id":{"name":"oSolid_mover","path":"objects/oSolid_mover/oSolid_mover.yy",},"order":4,},
+    {"id":{"name":"oPlatformReverse","path":"objects/oPlatformReverse/oPlatformReverse.yy",},"order":5,},
     {"id":{"name":"sSolid","path":"sprites/sSolid/sSolid.yy",},"order":0,},
     {"id":{"name":"sPlayer_idle","path":"sprites/sPlayer_idle/sPlayer_idle.yy",},"order":0,},
     {"id":{"name":"sClouds","path":"sprites/sClouds/sClouds.yy",},"order":1,},

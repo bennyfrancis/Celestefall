@@ -19,17 +19,15 @@ if (on_ground() && kJump) {
 moveX(xspd,collideX);
 moveY(yspd,collideY);
 
-
 //SPRITE HANDLING\\
 if (_dir != 0) {
 	image_xscale = _dir;
+	sprite_index = sPlayer_run;	
 }
 
 if (on_ground()) {
-	if (xspd == 0) {
+	if (xspd == 0 && _dir == 0) {
 		sprite_index = sPlayer_idle;
-	} else {
-		sprite_index = sPlayer_run;	
 	}
 } else {
 	if (yspd < 0) {
