@@ -14,6 +14,7 @@
 #region Utils
 
 	//populate a list of all actors who are riding the solid
+	//Returns: a DS list of actors riding the solid
 	function get_rider_list() {
 		var _list_of_riders = ds_list_create();
 		ds_list_clear(_list_of_riders);
