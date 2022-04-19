@@ -1,5 +1,5 @@
 xspd *= dir;
 yspd *= dir;
 
-moveX(xspd);
-moveY(yspd);
+move_x(xspd);
+move_y(yspd);

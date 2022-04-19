@@ -7,7 +7,7 @@ yspd_remainder = 0;
 
 dir = 1;
 
-function moveX(_xspd, collision_event = function() {}) {
+function move_x(_xspd, collision_event = function() {}) {
 	xspd_remainder += _xspd; //add the current frame's xspd to the last frame's remainder
 	var _move = xspd_remainder;
 	var _move = round(xspd_remainder); //get whole number of pixels to move
@@ -37,9 +37,9 @@ function moveX(_xspd, collision_event = function() {}) {
 						if (place_meeting(x,y,other)) {
 							//move any actors overlapping to the appropriate leading edge based on movement direction
 							//squash them if this will force them into a solid
-							moveX(other.bbox_right-bbox_left+_dir,squash()); 
+							move_x(other.bbox_right-bbox_left+_dir,squash()); 
 						} else if (ds_list_find_index(_list_of_riders,id) != -1) {
-							moveX(_dir); //carry the actor if they are riding the solid
+							move_x(_dir); //carry the actor if they are riding the solid
 						}
 					}
 					
@@ -49,9 +49,9 @@ function moveX(_xspd, collision_event = function() {}) {
 					with (oActor) {
 						if (place_meeting(x,y,other)) {
 							//move any actors overlapping to the appropriate leading edge based on movement direction
-							moveX(other.bbox_left-bbox_right+_dir,squash());
+							move_x(other.bbox_left-bbox_right+_dir,squash());
 						} else if (ds_list_find_index(_list_of_riders,id) != -1) {
-							moveX(_dir); //carry the actor if they are riding the solid
+							move_x(_dir); //carry the actor if they are riding the solid
 						}
 					}
 				}
@@ -68,7 +68,7 @@ function moveX(_xspd, collision_event = function() {}) {
 	}
 }
 	
-function moveY(_yspd, collision_event = function() {}) {
+function move_y(_yspd, collision_event = function() {}) {
 	yspd_remainder += _yspd; //add the current frame's xspd to the last frame's remainder
 	var _move = yspd_remainder;
 	var _move = round(yspd_remainder); //get whole number of pixels to move
@@ -97,10 +97,10 @@ function moveY(_yspd, collision_event = function() {}) {
 					with (oActor) {
 						if (place_meeting(x,y,other)) {
 							//move any actors overlapping to the appropriate leading edge based on movement direction
-							moveY(other.bbox_bottom-bbox_top+_dir,squash());
+							move_y(other.bbox_bottom-bbox_top+_dir,squash());
 						} else if (ds_list_find_index(_list_of_riders,id) != -1) {
 							//carry the actor if they are riding the solid
-							moveY(_dir);
+							move_y(_dir);
 						}
 					}	
 				//pushing/carrying player while moving UP
@@ -109,10 +109,10 @@ function moveY(_yspd, collision_event = function() {}) {
 					with (oActor) {
 						if (place_meeting(x,y,other)) {
 							//move any actors overlapping to the appropriate leading edge based on movement direction
-							moveY(other.bbox_top-bbox_bottom+_dir,squash());
+							move_y(other.bbox_top-bbox_bottom+_dir,squash());
 						} else if (ds_list_find_index(_list_of_riders,id) != -1) {
 							//carry the actor if they are riding the solid
-							moveY(_dir);
+							move_y(_dir);
 						}
 					}
 				} 
