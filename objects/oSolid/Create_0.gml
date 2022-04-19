@@ -1,4 +1,4 @@
-//INIT\\
+//INIT
 xspd = 0;
 xspd_remainder = 0;
 
@@ -7,7 +7,7 @@ yspd_remainder = 0;
 
 dir = 1;
 
-function moveX(_xspd,collision_event = function() {}) {
+function moveX(_xspd, collision_event = function() {}) {
 	xspd_remainder += _xspd; //add the current frame's xspd to the last frame's remainder
 	var _move = xspd_remainder;
 	var _move = round(xspd_remainder); //get whole number of pixels to move
@@ -59,7 +59,7 @@ function moveX(_xspd,collision_event = function() {}) {
 				_move -= _dir; //count down remaining movement pixels in frame
 			} else {
 				//what happens on collision with a solid
-				collision_event();;
+				collision_event();
 				ds_list_destroy(_list_of_riders); //list clean up
 				break;
 			}
@@ -68,7 +68,7 @@ function moveX(_xspd,collision_event = function() {}) {
 	}
 }
 	
-function moveY(_yspd,collision_event = function() {}) {
+function moveY(_yspd, collision_event = function() {}) {
 	yspd_remainder += _yspd; //add the current frame's xspd to the last frame's remainder
 	var _move = yspd_remainder;
 	var _move = round(yspd_remainder); //get whole number of pixels to move
