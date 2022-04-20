@@ -1,22 +1,23 @@
 #region Input
 
-	kLeft	= keyboard_check(vk_left)			||	keyboard_check(ord("A"));
-	kRight	= keyboard_check(vk_right)			||	keyboard_check(ord("D"));
-	kDown	= keyboard_check_pressed(vk_down)	||	keyboard_check_pressed(ord("S"));
-	kJump	= keyboard_check_pressed(vk_up)		||	keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"));
-	kReset	= keyboard_check_pressed(ord("R"));
+	k_left	= keyboard_check(vk_left)			||	keyboard_check(ord("A"));
+	k_right	= keyboard_check(vk_right)			||	keyboard_check(ord("D"));
+	k_down	= keyboard_check_pressed(vk_down)	||	keyboard_check_pressed(ord("S"));
+	k_jump	= keyboard_check_pressed(vk_up)		||	keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"));
+	k_reset	= keyboard_check_pressed(ord("R"));
+	
 #endregion
 
 #region Movement
 
-	var _dir = kRight - kLeft;
+	var _dir = k_right - k_left;
 	xspd = 3 * _dir;
 
 	// Gravity
 	yspd = min(yspd+grav, maxfallspd);
 
 	// Jumping
-	if (on_solid() && kJump) {
+	if (on_solid() && k_jump) {
 		yspd = jumpspd;
 	}
 
@@ -28,7 +29,7 @@
 	});
 	
 	//drop through one-way platforms
-	if (kDown && place_meeting(x, y+1, o_solid_oneway)) {
+	if (k_down && place_meeting(x, y+1, o_solid_oneway)) {
 		y += 2;	
 	}
 	
@@ -51,6 +52,6 @@
 	
 #endregion
 
-if (kReset) {
+if (k_reset) {
 	game_restart();	
 }
