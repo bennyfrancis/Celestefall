@@ -1,8 +1,9 @@
 #region Input
 
-	kLeft	= keyboard_check(vk_left)		|| keyboard_check(ord("A"));
-	kRight	= keyboard_check(vk_right)		|| keyboard_check(ord("D"));
-	kJump	= keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"));
+	kLeft	= keyboard_check(vk_left)			|| keyboard_check(ord("A"));
+	kRight	= keyboard_check(vk_right)			|| keyboard_check(ord("D"));
+	kDown	= keyboard_check_pressed(vk_down)	|| keyboard_check_pressed(ord("S"));
+	kJump	= keyboard_check_pressed(vk_up)		|| keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"));
 
 #endregion
 
@@ -25,6 +26,11 @@
 		collide_y();
 		show_debug_message("Vertical collision with: " + object_get_name(_inst.object_index));
 	});
+	
+	//drop through one-way platforms
+	if (kDown && place_meeting(x, y+1 , o_solid_oneway)) {
+		y ++;	
+	}
 	
 #endregion
 
