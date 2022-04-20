@@ -55,7 +55,7 @@
 					if (_move > 0) {
 						with (o_actor) {
 							if (place_meeting(x,y,other)) {
-								move_x(other.bbox_right-bbox_left+_dir,squash()); 
+								move_x(other.bbox_right-bbox_left+_dir,squash); 
 							} else if (ds_list_find_index(_list_of_riders,id) != -1) {
 								move_x(_dir);
 							}
@@ -65,7 +65,7 @@
 					} else {
 						with (o_actor) {
 							if (place_meeting(x,y,other)) {
-								move_x(other.bbox_left-bbox_right+_dir,squash());
+								move_x(other.bbox_left-bbox_right+_dir,squash);
 							} else if (ds_list_find_index(_list_of_riders,id) != -1) {
 								move_x(_dir);
 							}
@@ -102,7 +102,7 @@
 					if (_move > 0) {		
 						with (o_actor) {
 							if (place_meeting(x,y,other)) {
-								move_y(other.bbox_bottom-bbox_top+_dir,squash());
+								move_y(other.bbox_bottom-bbox_top+_dir,squash);
 							} else if (ds_list_find_index(_list_of_riders,id) != -1) {
 								move_y(_dir);
 							}
@@ -112,7 +112,7 @@
 					} else {
 						with (o_actor) {
 							if (place_meeting(x,y,other)) {
-								move_y(other.bbox_top-bbox_bottom+_dir,squash());
+								move_y(other.bbox_top-bbox_bottom+_dir,squash);
 							} else if (ds_list_find_index(_list_of_riders,id) != -1) {
 								move_y(_dir);
 							}

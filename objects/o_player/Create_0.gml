@@ -10,6 +10,7 @@ function on_ground() {
 }
 
 function squash() {
+	show_debug_message("squashed");
 	instance_create_depth(x, y, -1, o_player_squash);
 	instance_destroy(id);
 }
