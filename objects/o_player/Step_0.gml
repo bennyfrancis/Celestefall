@@ -1,10 +1,10 @@
 #region Input
 
-	kLeft	= keyboard_check(vk_left)			|| keyboard_check(ord("A"));
-	kRight	= keyboard_check(vk_right)			|| keyboard_check(ord("D"));
-	kDown	= keyboard_check_pressed(vk_down)	|| keyboard_check_pressed(ord("S"));
-	kJump	= keyboard_check_pressed(vk_up)		|| keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"));
-
+	kLeft	= keyboard_check(vk_left)			||	keyboard_check(ord("A"));
+	kRight	= keyboard_check(vk_right)			||	keyboard_check(ord("D"));
+	kDown	= keyboard_check_pressed(vk_down)	||	keyboard_check_pressed(ord("S"));
+	kJump	= keyboard_check_pressed(vk_up)		||	keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"));
+	kReset	= keyboard_check_pressed(ord("R"));
 #endregion
 
 #region Movement
@@ -51,4 +51,6 @@
 	
 #endregion
 
-
+if (kReset) {
+	game_restart();	
+}
