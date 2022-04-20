@@ -16,7 +16,7 @@
 	yspd = min(yspd+grav, maxfallspd);
 
 	// Jumping
-	if (on_ground() && kJump) {
+	if (on_solid() && kJump) {
 		yspd = jumpspd;
 	}
 
@@ -41,7 +41,7 @@
 		sprite_index = s_player_run;	
 	}
 
-	if (on_ground()) {
+	if (on_solid()) {
 		if (xspd == 0 && _dir == 0) {
 			sprite_index = s_player_idle;
 		}
