@@ -46,11 +46,11 @@
 			var _dir = sign(_move);
 		
 			while (_move != 0) {
-				if (!place_meeting(x+_dir,y,o_solid)) {
+				if (!place_meeting(x+_dir, y, o_solid)) {
 					x += _dir;
 					//carry player
 					with (o_actor) {
-						if (place_meeting(x,y+1,other) && bbox_bottom <= other.bbox_top) {
+						if (place_meeting(x, y+1, other) && bbox_bottom <= other.bbox_top) {
 							move_x(_dir);
 						}
 					}
@@ -76,7 +76,7 @@
 			var _list_of_riders = get_rider_list();
 
 				while (_move != 0) {
-				if (!place_meeting(x,y+_dir,o_solid)) {
+				if (!place_meeting(x, y+_dir, o_solid)) {
 					y += _dir;
 					
 					//moving DOWN
@@ -91,8 +91,8 @@
 					} else {
 						with (o_actor) {
 							if (bbox_bottom <= other.bbox_top) {
-								if (place_meeting(x,y,other)) {
-									move_y(other.bbox_top-bbox_bottom+_dir,squash);
+								if (place_meeting(x, y, other)) {
+									move_y(other.bbox_top-bbox_bottom+_dir, squash);
 								} else if (ds_list_find_index(_list_of_riders,id) != -1) {
 									move_y(_dir);
 								}
