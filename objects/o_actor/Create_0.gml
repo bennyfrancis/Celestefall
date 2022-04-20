@@ -37,7 +37,7 @@
 	
 	//action to execute when actor is squashed between two solids
 	function squash() {
-		
+
 	}
 
 #endregion

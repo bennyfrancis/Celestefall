@@ -9,3 +9,7 @@ function on_ground() {
 	return (place_meeting(x, y+1, o_solid));
 }
 
+function squash() {
+	instance_create_depth(x, y, -1, o_player_squash);
+	instance_destroy(id);
+}
