@@ -77,8 +77,15 @@
 			var _dir = sign(_move);
 		
 			while (_move != 0) {
+				
 				var collision_instance = instance_place(x, y+_dir, o_solid);
 				if (collision_instance != noone) {
+						_collision_event(collision_instance);
+						break;
+				}
+				
+				var collision_instance = instance_place(x, y+_dir, o_solid_oneway);
+				if (collision_instance != noone && bbox_bottom < collision_instance.bbox_top) {
 					_collision_event(collision_instance);
 					break;
 				}

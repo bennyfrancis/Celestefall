@@ -44,42 +44,23 @@
 		if (_move != 0) {		
 			xspd_remainder -= _move;
 			var _dir = sign(_move);
-	
-			var _list_of_riders = get_rider_list();
 		
 			while (_move != 0) {
 				if (!place_meeting(x+_dir, y, o_solid)) {
 					x += _dir;
-				
-					//pushing/carrying player while moving RIGHT
-					if (_move > 0) {
-						with (o_actor) {
-							if (place_meeting(x, y, other)) {
-								move_x(other.bbox_right-bbox_left+_dir, squash); 
-							} else if (ds_list_find_index(_list_of_riders,id) != -1) {
-								move_x(_dir);
-							}
-						}
-					
-					//pushing/carrying player while moving LEFT
-					} else {
-						with (o_actor) {
-							if (place_meeting(x, y, other)) {
-								move_x(other.bbox_left-bbox_right+_dir, squash);
-							} else if (ds_list_find_index(_list_of_riders,id) != -1) {
-								move_x(_dir);
-							}
+					//carry player
+					with (o_actor) {
+						if (place_meeting(x, y+1, other) && bbox_bottom <= other.bbox_top) {
+							move_x(_dir);
 						}
 					}
-				
+					
 					_move -= _dir;
 				} else {
 					collision_event();
-					ds_list_destroy(_list_of_riders);
 					break;
 				}
 			}
-			ds_list_destroy(_list_of_riders);
 		}
 	}
 	
@@ -94,16 +75,14 @@
 	
 			var _list_of_riders = get_rider_list();
 
-			while (_move != 0) {
+				while (_move != 0) {
 				if (!place_meeting(x, y+_dir, o_solid)) {
 					y += _dir;
-				
-					//pushing/carrying player while moving DOWN
-					if (_move > 0) {		
+					
+					//moving DOWN
+					if (_move > 0) {
 						with (o_actor) {
-							if (place_meeting(x, y, other)) {
-								move_y(other.bbox_bottom-bbox_top+_dir, squash);
-							} else if (ds_list_find_index(_list_of_riders,id) != -1) {
+							if (ds_list_find_index(_list_of_riders,id) != -1 && bbox_bottom <= other.bbox_top) {
 								move_y(_dir);
 							}
 						}	
@@ -111,10 +90,12 @@
 					//pushing/carrying player while moving UP
 					} else {
 						with (o_actor) {
-							if (place_meeting(x, y, other)) {
-								move_y(other.bbox_top-bbox_bottom+_dir, squash);
-							} else if (ds_list_find_index(_list_of_riders,id) != -1) {
-								move_y(_dir);
+							if (bbox_bottom <= other.bbox_top) {
+								if (place_meeting(x, y, other)) {
+									move_y(other.bbox_top-bbox_bottom+_dir, squash);
+								} else if (ds_list_find_index(_list_of_riders,id) != -1) {
+									move_y(_dir);
+								}
 							}
 						}
 					} 

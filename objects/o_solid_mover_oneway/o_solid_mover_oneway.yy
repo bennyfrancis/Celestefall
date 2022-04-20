@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "s_platform_reverser",
-    "path": "sprites/s_platform_reverser/s_platform_reverser.yy",
+    "name": "s_solid_mover_oneway",
+    "path": "sprites/s_solid_mover_oneway/s_solid_mover_oneway.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "o_solid_oneway",
+    "path": "objects/o_solid_oneway/o_solid_oneway.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -21,8 +24,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"o_solid","path":"objects/o_solid/o_solid.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"o_solid_oneway","path":"objects/o_solid_oneway/o_solid_oneway.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":1,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -31,7 +33,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "o_platform_reverser",
+  "name": "o_solid_mover_oneway",
   "tags": [],
   "resourceType": "GMObject",
 }
