@@ -28,8 +28,8 @@
 	});
 	
 	//drop through one-way platforms
-	if (kDown && place_meeting(x, y+1 , o_solid_oneway)) {
-		y ++;	
+	if (kDown && place_meeting(x, y+1, o_solid_oneway)) {
+		y += 2;	
 	}
 	
 #endregion
