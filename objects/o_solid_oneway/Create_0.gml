@@ -21,7 +21,7 @@
 	//then carry any riding actors
 	//Param: _xspd,_yspd (amount to move solid in current frame)
 	//Param: _collision_event (function to execute when a collision is detected (defaults to no action))
-	function move_x(_xspd, collision_event = function() {}) {
+	function move_x(_xspd, _collision_event = function() {}) {
 		xspd_remainder += _xspd;
 		var _move = round(xspd_remainder);
 	
@@ -30,20 +30,25 @@
 			var _dir = sign(_move);
 		
 			while (_move != 0) {
-				if (!place_meeting(x+_dir, y, o_solid)) {
-					x += _dir;
-					//carry actor on top
-					with (o_actor) {
-						if (place_meeting(x, y+1, other) && bbox_bottom <= other.bbox_top) {
-							move_x(_dir);
-						}
-					}
-					
-					_move -= _dir;
-				} else {
-					collision_event();
+				
+				// Check for collision in next spot
+				var colliding_instance = instance_place(x+_dir, y, o_solid);
+				if (colliding_instance != noone) {
+					_collision_event(colliding_instance);
 					break;
 				}
+				
+				x += _dir;
+				
+				//carry actor on top
+				with (o_actor) {
+					if (place_meeting(x, y+1, other) && bbox_bottom <= other.bbox_top) {
+						move_x(_dir);
+					}
+				}
+				
+				_move -= _dir;
+				
 			}
 		}
 	}
@@ -59,35 +64,36 @@
 			get_rider_list(list_of_riders);
 
 			while (_move != 0) {
-				if (!place_meeting(x, y+_dir, o_solid)) {
-					y += _dir;
+							
+				// Check for collision in next spot
+				var colliding_instance = instance_place(x, y+_dir, o_solid);
+				if (colliding_instance != noone) {
+					_collision_event(colliding_instance);
+					break;
+				}
+				
+				y += _dir;
+				
+				
+				with (o_actor) {
 					
-					//moving DOWN
 					if (_move > 0) {
-						with (o_actor) {
-							if (ds_list_find_index(other.list_of_riders,id) != -1 && bbox_bottom <= other.bbox_top) {
-								move_y(_dir);
-							}
-						}	
-						
-					//moving UP
+						//moving DOWN
+						if (ds_list_find_index(other.list_of_riders,id) != -1 && bbox_bottom <= other.bbox_top) {
+							move_y(_dir);
+						}
 					} else if (_move < 0) {
-						with (o_actor) {
-							if (bbox_bottom <= other.bbox_top) {
-								if (place_meeting(x, y, other)) {
-									move_y(other.bbox_top-bbox_bottom+_dir, squash);
-								} else if (ds_list_find_index(other.list_of_riders,id) != -1) {
-									move_y(_dir);
-								}
+						//moving UP
+						if (bbox_bottom <= other.bbox_top) {
+							if (place_meeting(x, y, other)) {
+								move_y(other.bbox_top-bbox_bottom+_dir, squash);
+							} else if (ds_list_find_index(other.list_of_riders,id) != -1) {
+								move_y(_dir);
 							}
 						}
 					}
-					_move -= _dir;
-				
-				} else {
-					collision_event();
-					break;
 				}
+				_move -= _dir;
 			}
 		}
 	}
