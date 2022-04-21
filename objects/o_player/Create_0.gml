@@ -4,7 +4,8 @@ event_inherited();
 grav		= 0.5;
 jumpspd		= -8;
 maxfallspd	= 6;
-
+clinging	= false;
+cling_inst	= noone;
 
 function squash() {
 	show_debug_message("squashed");

@@ -4,21 +4,48 @@
 	k_right	= keyboard_check(vk_right)			||	keyboard_check(ord("D"));
 	k_down	= keyboard_check_pressed(vk_down)	||	keyboard_check_pressed(ord("S"));
 	k_jump	= keyboard_check_pressed(vk_up)		||	keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"));
-	k_reset	= keyboard_check_pressed(ord("R"));
+	k_cling	= keyboard_check(vk_shift);
 	
 #endregion
 
 #region Movement
 
 	var _dir = k_right - k_left;
-	xspd = 3 * _dir;
+	
+	if (!clinging) { 
+		
+		// Movement
+		xspd = 3 * _dir;
+		
+		// Gravity
+		yspd = min(yspd+grav, maxfallspd);
 
-	// Gravity
-	yspd = min(yspd+grav, maxfallspd);
+		// Jumping
+		if (on_solid() && k_jump) {
+			yspd = jumpspd;
+		}
+	} else {
+		yspd = 0;
+		yspd_remainder = 0;
+	}
 
-	// Jumping
-	if (on_solid() && k_jump) {
-		yspd = jumpspd;
+	// Wall cling
+	if (k_cling) {
+
+		cling_inst = instance_place(x+1,y,o_solid);
+		
+		if (cling_inst == noone) {
+			cling_inst = instance_place(x-1,y,o_solid);
+		}
+		
+		if (cling_inst != noone) {
+			clinging = true;
+		} else {
+			clinging = false;
+		}
+		
+	} else {
+		clinging = false;
 	}
 
 	// Move and collide
@@ -28,7 +55,7 @@
 		show_debug_message("Vertical collision with: " + object_get_name(_inst.object_index));
 	});
 	
-	//drop through one-way platforms
+	// Drop through one-way platforms
 	if (k_down && place_meeting(x, y+1, o_solid_oneway)) {
 		y += 2;	
 	}
@@ -51,7 +78,3 @@
 	}
 	
 #endregion
-
-if (k_reset) {
-	game_restart();	
-}
