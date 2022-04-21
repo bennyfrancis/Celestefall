@@ -16,6 +16,7 @@
     {"id":{"name":"o_solid_mover","path":"objects/o_solid_mover/o_solid_mover.yy",},"order":2,},
     {"id":{"name":"o_solid_oneway","path":"objects/o_solid_oneway/o_solid_oneway.yy",},"order":2,},
     {"id":{"name":"o_platform_reverser","path":"objects/o_platform_reverser/o_platform_reverser.yy",},"order":4,},
+    {"id":{"name":"scr_celestefall_utils","path":"scripts/scr_celestefall_utils/scr_celestefall_utils.yy",},"order":3,},
     {"id":{"name":"s_solid","path":"sprites/s_solid/s_solid.yy",},"order":0,},
     {"id":{"name":"s_player_idle","path":"sprites/s_player_idle/s_player_idle.yy",},"order":0,},
     {"id":{"name":"s_clouds","path":"sprites/s_clouds/s_clouds.yy",},"order":1,},
