@@ -35,25 +35,19 @@
 			while (_move != 0) {
 				if (!place_meeting(x+_dir, y, o_solid)) {
 					x += _dir;
-				
-					//pushing/carrying player while moving RIGHT
-					if (_move > 0) {
-						with (o_actor) {
-							if (place_meeting(x, y, other)) {
-								move_x(other.bbox_right-bbox_left+_dir, squash); 
-							} else if (ds_list_find_index(other.list_of_riders, id) != -1) {
-								move_x(_dir);
-							}
-						}
 					
-					//pushing/carrying player while moving LEFT
-					} else {
-						with (o_actor) {
-							if (place_meeting(x, y, other)) {
+					// Carry actors
+					with (o_actor) {
+						if (place_meeting(x, y, other)) {
+							if (_move > 0) {
+								// Carry while moving right
+								move_x(other.bbox_right-bbox_left+_dir, squash);
+							} else {
+								// Carry while moving left
 								move_x(other.bbox_left-bbox_right+_dir, squash);
-							} else if (ds_list_find_index(other.list_of_riders, id) != -1) {
-								move_x(_dir);
 							}
+						} else if (ds_list_find_index(other.list_of_riders, id) != -1) {
+							move_x(_dir);
 						}
 					}
 				
@@ -80,27 +74,22 @@
 			while (_move != 0) {
 				if (!place_meeting(x, y+_dir, o_solid)) {
 					y += _dir;
-				
-					//pushing/carrying player while moving DOWN
-					if (_move > 0) {		
-						with (o_actor) {
-							if (place_meeting(x, y, other)) {
+					
+					// Carry actors
+					with (o_actor) {
+						if (place_meeting(x, y, other)) {
+							if (_move > 0) {
+								// Carry while moving down
 								move_y(other.bbox_bottom-bbox_top+_dir, squash);
-							} else if (ds_list_find_index(other.list_of_riders,id) != -1) {
-								move_y(_dir);
-							}
-						}	
-						
-					//pushing/carrying player while moving UP
-					} else {
-						with (o_actor) {
-							if (place_meeting(x, y, other)) {
+							} else {
+								// Carry while moving up
 								move_y(other.bbox_top-bbox_bottom+_dir, squash);
-							} else if (ds_list_find_index(other.list_of_riders,id) != -1) {
-								move_y(_dir);
 							}
+						} else if (ds_list_find_index(other.list_of_riders, id) != -1) {
+							move_y(_dir);
 						}
-					} 
+					}
+					
 					_move -= _dir;
 				
 				} else {
