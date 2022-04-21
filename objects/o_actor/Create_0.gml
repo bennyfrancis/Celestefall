@@ -27,15 +27,17 @@
 	//Param: solid (instance of moving solid colliding with actor)
 	//Returns: True or false
 	function is_riding(_solid) {
-		//when actor is on top
+		//actor is on top
 		if (place_meeting(x, y+1, _solid)) { return true };
-		//when actor is underneath
+		//actor is underneath
 		if (place_meeting(x, y-1, _solid) && sign(_solid.yspd) == 1) { return true };
-		//when actor is moving the same direction horizontally as a moving solid (moving faster than the solid)
+		//player wall clinging
+		if (object_get_name(id) == o_player && clinging == _solid) { return true };
+		//actor is moving the same direction horizontally as a moving solid (moving faster than the solid)
 		return (place_meeting(x+sign(_solid.xspd), y, _solid) && sign(xspd) == sign(_solid.xspd)); 
 	}
 	
-	//action to execute when actor is squashed between two solids
+	//default action to execute when actor is squashed between two solids
 	function squash() {
 
 	}

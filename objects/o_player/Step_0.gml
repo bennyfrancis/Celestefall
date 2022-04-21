@@ -4,7 +4,7 @@
 	k_right	= keyboard_check(vk_right)			||	keyboard_check(ord("D"));
 	k_down	= keyboard_check_pressed(vk_down)	||	keyboard_check_pressed(ord("S"));
 	k_jump	= keyboard_check_pressed(vk_up)		||	keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"));
-	k_reset	= keyboard_check_pressed(ord("R"));
+	k_cling	= keyboard_check_pressed(ord("R"));
 	
 #endregion
 
@@ -20,6 +20,13 @@
 	if (on_solid() && k_jump) {
 		yspd = jumpspd;
 	}
+	
+	// Wall cling
+	cling_inst = instance_place(x+1,y,o_solid) || instance_place(x-1,y,o_solid);
+	
+	if (cling_inst != noone && k_cling) { clinging = true; }
+	
+	
 
 	// Move and collide
 	move_x(xspd);

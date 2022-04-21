@@ -4,7 +4,7 @@ function on_solid() {
 
 // Populate a referenced list of all actors who are riding the solid
 // Returns: void
-function get_rider_list(_list_of_riders) {
+function rider_populate_list(_list_of_riders) {
 	ds_list_clear(_list_of_riders);
 
 	with (o_actor) {

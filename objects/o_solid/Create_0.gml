@@ -29,7 +29,7 @@
 			xspd_remainder -= _move;
 			var _dir = sign(_move);
 	
-			get_rider_list(list_of_riders);
+			rider_populate_list(list_of_riders);
 		
 			while (_move != 0) {
 				
@@ -70,7 +70,7 @@
 			yspd_remainder -= _move;
 			var _dir = sign(_move);
 	
-			get_rider_list(list_of_riders);
+			rider_populate_list(list_of_riders);
 
 			while (_move != 0) {
 				
