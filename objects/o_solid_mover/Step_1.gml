@@ -3,5 +3,5 @@
 xspd *= dir;
 yspd *= dir;
 
-move_x(xspd);
-move_y(yspd);
+move_x(xspd,with_actor_x);
+move_y(yspd,with_actor_y);

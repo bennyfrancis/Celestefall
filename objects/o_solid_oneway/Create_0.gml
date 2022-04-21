@@ -53,7 +53,7 @@
 		}
 	}
 	
-	function move_y(_yspd, collision_event = function() {}) {
+	function move_y(_yspd, _collision_event = function() {}) {
 		yspd_remainder += _yspd;
 		var _move = round(yspd_remainder);
 	
@@ -61,7 +61,7 @@
 			yspd_remainder -= _move;
 			var _dir = sign(_move);
 	
-			get_rider_list(list_of_riders);
+			rider_populate_list(list_of_riders);
 
 			while (_move != 0) {
 							
@@ -74,9 +74,7 @@
 				
 				y += _dir;
 				
-				
 				with (o_actor) {
-					
 					if (_move > 0) {
 						//moving DOWN
 						if (ds_list_find_index(other.list_of_riders,id) != -1 && bbox_bottom <= other.bbox_top) {
