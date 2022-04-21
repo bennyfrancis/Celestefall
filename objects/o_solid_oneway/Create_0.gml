@@ -58,7 +58,7 @@
 	
 			get_rider_list(list_of_riders);
 
-				while (_move != 0) {
+			while (_move != 0) {
 				if (!place_meeting(x, y+_dir, o_solid)) {
 					y += _dir;
 					
