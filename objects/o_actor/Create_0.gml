@@ -32,10 +32,10 @@
 		//actor is underneath
 		if (place_meeting(x, y-1, _solid) && sign(_solid.yspd) == 1) { return true };
 		//player wall clinging
-		if (object_get_name(id) == o_player && clinging == _solid) { return true };
+		if (clinging && cling_inst == _solid.id) { return true };
 		//actor is moving the same direction horizontally as a moving solid (moving faster than the solid)
 		return (place_meeting(x+sign(_solid.xspd), y, _solid) && sign(xspd) == sign(_solid.xspd)); 
-	}
+	}	
 	
 	//default action to execute when actor is squashed between two solids
 	function squash() {
