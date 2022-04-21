@@ -48,7 +48,7 @@
 						if (_move > 0) {
 							// Carry while moving right
 							move_x(other.bbox_right-bbox_left+_dir, squash);
-						} else {
+						} else if (_move < 0) {
 							// Carry while moving left
 							move_x(other.bbox_left-bbox_right+_dir, squash);
 						}
@@ -89,7 +89,7 @@
 						if (_move > 0) {
 							// Carry while moving down
 							move_y(other.bbox_bottom-bbox_top+_dir, squash);
-						} else {
+						} else if (_move < 0) {
 							// Carry while moving up
 							move_y(other.bbox_top-bbox_bottom+_dir, squash);
 						}

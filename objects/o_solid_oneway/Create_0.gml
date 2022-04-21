@@ -23,7 +23,6 @@
 	//Param: _collision_event (function to execute when a collision is detected (defaults to no action))
 	function move_x(_xspd, collision_event = function() {}) {
 		xspd_remainder += _xspd;
-		var _move = xspd_remainder;
 		var _move = round(xspd_remainder);
 	
 		if (_move != 0) {		
@@ -33,7 +32,7 @@
 			while (_move != 0) {
 				if (!place_meeting(x+_dir, y, o_solid)) {
 					x += _dir;
-					//carry player
+					//carry actor on top
 					with (o_actor) {
 						if (place_meeting(x, y+1, other) && bbox_bottom <= other.bbox_top) {
 							move_x(_dir);
@@ -51,7 +50,6 @@
 	
 	function move_y(_yspd, collision_event = function() {}) {
 		yspd_remainder += _yspd;
-		var _move = yspd_remainder;
 		var _move = round(yspd_remainder);
 	
 		if (_move != 0) {		
@@ -72,8 +70,8 @@
 							}
 						}	
 						
-					//pushing/carrying player while moving UP
-					} else {
+					//moving UP
+					} else if (_move < 0) {
 						with (o_actor) {
 							if (bbox_bottom <= other.bbox_top) {
 								if (place_meeting(x, y, other)) {
