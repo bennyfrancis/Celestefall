@@ -80,8 +80,9 @@
 					} else {
 						// Moving up
 						if (bbox_bottom <= other.bbox_top) {
+							//we need to check if the solid is moving up faster than the actor
+							//this catches a bug caused by jumping over/through a platform on the wrong frame
 							var _diff = yspd - other.yspd;
-							show_debug_message(string(_diff));
 							if ( _diff > 0) {
 								if (place_meeting(x, y, other)) {
 									move_y(other.bbox_top-bbox_bottom+_dir, squash);
