@@ -97,7 +97,8 @@
 							if (_diff > 0) { move_y(other.bbox_top-bbox_bottom+_dir, squash); }
 						}
 					} else if (ds_list_find_index(other.list_of_riders, id) != -1) {
-						move_y(_dir);
+						if (_move > 0) { move_y(_dir); }
+						if (_move < 0 && _diff > 0) { move_y(_dir); }
 					}
 				}
 					
