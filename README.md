@@ -11,7 +11,7 @@ This engine includes:
 Bonus: Solids and actors can be customized to behave how you want! The demo project includes an example of a player actor and two different kinds of moving solids as examples.
 
 Notes:
-- This method currently uses the compatibility mode for collisions found in the Main project settings.
+- This method was created using GameMaker 2.3 and has not been tested in earlier versions. It currently uses the compatibility mode for collisions found in the Main project settings of GameMaker.
 - Solids must run their move functions before actors do. In other words solids should run their move functions in the Begin Step event. while Actors run their move functions in the Step event.)
 
 Credit to Maddy Thorson for sharing the original article which has been adapted to work with GameMaker. Please refer to the article for a detailed explanation of how this approach works: 
