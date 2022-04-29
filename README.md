@@ -18,6 +18,7 @@ Credit to Maddy Thorson for sharing the original article which has been adapted 
 
 https://maddythorson.medium.com/celeste-and-towerfall-physics-d24bd2ae0fc5
 
+
 Please feel free to reach out to me on Discord if you have questions or comments: bennyfrancis#6146
 
 Thanks!
