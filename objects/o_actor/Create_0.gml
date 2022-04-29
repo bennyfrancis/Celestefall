@@ -91,11 +91,12 @@
 				//performs a bbox check to see if actor is above solid
 				var collision_instance = instance_place(x, y+_dir, o_solid_oneway);
 				if (collision_instance != noone && bbox_bottom <= collision_instance.bbox_top) {
-					if (yspd < 0 && collision_instance.yspd > 0) {
-						
-					} else {
+					//this speed check catches a bug with the player sticking to the platform when they shouldn't
+					if (yspd >= 0 || collision_instance.yspd <= 0) {
 						_collision_event(collision_instance);
 						break;
+					} else {
+						show_debug_message("CAUGHT");	
 					}
 				}
 			
