@@ -9,7 +9,8 @@
 	yspd = 0;
 	yspd_remainder = 0;
 
-	dir = 1; //movement direction
+	//optional movement direction var
+	dir = 1;
 	
 #endregion
 

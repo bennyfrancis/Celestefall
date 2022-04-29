@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Platforms",
+    "path": "folders/Objects/Platforms.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_platform_reverser",

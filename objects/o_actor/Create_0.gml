@@ -27,12 +27,12 @@
 	//Param: solid (instance of moving solid colliding with actor)
 	//Returns: True or false
 	function is_riding(_solid) {
+		//optional check for player wall clinging
+		if (clinging && cling_inst == _solid.id) { return true };
 		//actor is on top
 		if (place_meeting(x, y+1, _solid)) { return true };
 		//actor is underneath
 		if (place_meeting(x, y-1, _solid) && sign(_solid.yspd) == 1) { return true };
-		//player wall clinging
-		if (clinging && cling_inst == _solid.id) { return true };
 		//actor is moving the same direction horizontally as a moving solid (moving faster than the solid)
 		return (place_meeting(x+sign(_solid.xspd), y, _solid) && sign(xspd) == sign(_solid.xspd)); 
 	}	

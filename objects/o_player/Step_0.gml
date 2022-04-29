@@ -34,8 +34,12 @@
 
 		cling_inst = instance_place(x+1,y,o_solid);
 		
+		
 		if (cling_inst == noone) {
 			cling_inst = instance_place(x-1,y,o_solid);
+			if (cling_inst != noone) { cling_dir = 1 };
+		} else { 
+			cling_dir = -1;	
 		}
 		
 		if (cling_inst != noone) {
@@ -52,7 +56,7 @@
 	move_x(xspd);
 	move_y(yspd, function(_inst) {
 		collide_y();
-		//show_debug_message("Vertical collision with: " + object_get_name(_inst.object_index));
+		show_debug_message("Vertical collision with: " + object_get_name(_inst.object_index));
 	});
 	
 	// Drop through one-way platforms
@@ -75,6 +79,11 @@
 		}
 	} else {
 		sprite_index = yspd < 0 ? s_player_jump : s_player_fall;
+	}
+	
+	if (clinging) {
+		sprite_index = s_player_cling;
+		image_xscale = cling_dir;
 	}
 	
 #endregion

@@ -1,3 +1,6 @@
+//Check if actor is standing on a solid
+//Returns: boolean
+
 function on_solid() {
 	return (place_meeting(x, y+1, o_solid) || place_meeting(x, y+1, o_solid_oneway));
 }
