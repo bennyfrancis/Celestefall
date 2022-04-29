@@ -80,16 +80,22 @@
 		
 			while (_move != 0) {
 				
+				//collision with regular solids
 				var collision_instance = instance_place(x, y+_dir, o_solid);
 				if (collision_instance != noone) {
 						_collision_event(collision_instance);
 						break;
 				}
 				
+				//collision with one way solids
+				//performs a bbox check to see if actor is above solid
 				var collision_instance = instance_place(x, y+_dir, o_solid_oneway);
-				if (collision_instance != noone && bbox_bottom < collision_instance.bbox_top) {
-					_collision_event(collision_instance);
-					break;
+				if (collision_instance != noone && bbox_bottom <= collision_instance.bbox_top) {
+					
+					if (yspd > collision_instance.yspd && bbox_bottom != collision_instance.bbox_top) {
+						_collision_event(collision_instance);
+						break;
+					}
 				}
 			
 				y += _dir;
@@ -97,6 +103,8 @@
 			}
 		}
 	}
+
+
 
 #endregion
 
