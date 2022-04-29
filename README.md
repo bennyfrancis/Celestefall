@@ -1,5 +1,5 @@
 # Celestefall - Move and Collide Platformer Engine
-Parent based platformer move and collide engine with moving solids for GameMaker based on Celeste and Towerfall physics.
+A parent based platformer move and collide engine with moving solids for GameMaker based on Celeste and Towerfall physics.
 
 Calculate your move distances/speeds how you want and use the included move_x(xspd,collision_event) and move_y(yspd,collision_event) functions to move your solids and actors. It's that simple! No need for additional collision or movement code, however the system is easily customizable!
 
