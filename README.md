@@ -1,6 +1,20 @@
-# Celestefall
-Parent based platformer move and collide engine with moving solids for GameMaker based on Celeste and Towerfall physics. (Note: This method currently uses the compatibility mode for collisions found in the Main project settings.)
+# Celestefall - Move and Collide Platformer Engine
+Parent based platformer move and collide engine with moving solids for GameMaker based on Celeste and Towerfall physics.
 
-Credit to Maddy Thorson for the concept article which has been adapted to work with GameMaker. Please refer to their article for a detailed explanation of how this approach works: 
+Calculate your move distances/speeds how you want and use the included move_x(xspd,collision_event) and move_y(yspd,collision_event) functions to move your solids and actors. It's that simple! No need for additional collision or movement code, however the system is easily customizable!
+
+This engine includes:
+- Simple parenting system for easy implementation in your project
+- Many actors simultaneously interacting with many moving solids
+- Custom collision event definition
+
+Bonus: Solids and actors can be customized to behave how you want! The demo project includes an example of a player actor and two different kinds of moving solids as examples.
+
+Notes:
+- This method currently uses the compatibility mode for collisions found in the Main project settings.)
+- Solids must run their move functions before actors do. In other words solids should run their move functions in the Begin Step event. while Actors run their move functions in the Step event.)
+
+
+Credit to Maddy Thorson for sharing the original article which has been adapted to work with GameMaker. Please refer to the article for a detailed explanation of how this approach works: 
 
 https://maddythorson.medium.com/celeste-and-towerfall-physics-d24bd2ae0fc5
