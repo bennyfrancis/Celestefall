@@ -14,7 +14,7 @@ Bonus: Solids and actors can be customized to behave how you want! The demo proj
 - This method was created using GameMaker 2.3 and has not been tested in earlier versions. It currently uses the compatibility mode for collisions found in the Main Project Settings of GameMaker.
 - Solids must run their move functions before Actors do. In other words Solids should run their move functions in the Begin Step event, while Actors run their move functions in the Step event.
 
-Credit to Maddy Thorson for sharing the original article which has been adapted to work with GameMaker. Please refer to the article for a detailed explanation of how this approach works: 
+Thanks to Maddy Thorson for sharing the original article which has been adapted to work with GameMaker. Please refer to the article for a detailed explanation of how this approach works: 
 
 https://maddythorson.medium.com/celeste-and-towerfall-physics-d24bd2ae0fc5
 
