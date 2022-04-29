@@ -8,7 +8,7 @@ This engine includes:
 - Many actors simultaneously interacting with many moving solids
 - Custom collision event definition
 
-Bonus: Solids and actors can be customized to behave how you want! The demo project includes an examples of a player actor and two different kinds of moving solids.
+Bonus: Solids and actors can be customized to behave how you want! The demo project includes examples of a player actor and two different kinds of moving solids.
 
 **Important Notes:**
 - This method was created using GameMaker 2.3 and has not been tested in earlier versions. It currently uses the compatibility mode for collisions found in the Main Project Settings of GameMaker.
