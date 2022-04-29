@@ -1,4 +1,4 @@
-//this has to happen in the begin step
+//movement of a solid has to happen in the begin step
 
 xspd *= dir;
 yspd *= dir;
