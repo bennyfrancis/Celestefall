@@ -90,9 +90,13 @@
 				//collision with one way solids
 				//performs a bbox check to see if actor is above solid
 				var collision_instance = instance_place(x, y+_dir, o_solid_oneway);
-				if (collision_instance != noone && bbox_bottom <= collision_instance.bbox_top) {	
+				if (collision_instance != noone && bbox_bottom <= collision_instance.bbox_top) {
+					if (yspd < 0 && collision_instance.yspd > 0) {
+						
+					} else {
 						_collision_event(collision_instance);
 						break;
+					}
 				}
 			
 				y += _dir;
