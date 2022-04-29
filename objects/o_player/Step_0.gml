@@ -54,9 +54,10 @@
 
 	// Move and collide
 	move_x(xspd);
+	
 	move_y(yspd, function(_inst) {
 		collide_y();
-		//show_debug_message("Vertical collision with: " + object_get_name(_inst.object_index));
+		show_debug_message("Vertical collision with: " + object_get_name(_inst.object_index));
 	});
 	
 	// Drop through one-way platforms

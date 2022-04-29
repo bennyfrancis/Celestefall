@@ -14,7 +14,7 @@
 	
 #endregion
 
-#region Movement and collision
+#region Movemdent and collision
 
 	//Note: movement for solids should normally be executed in the Begin Step event
 	//pixel by pixel movement and collision checks, carrying fractional remainders to next frame
@@ -86,20 +86,16 @@
 					
 				// Carry actors
 				with (o_actor) {
-					//we need to check if the solid is moving up faster than the actor
-					//this catches a bug caused by jumping over/through a platform on the wrong frame
-					var _diff = yspd - other.yspd;
 					if (place_meeting(x, y, other)) {
 						if (_move > 0) {
 							// Carry while moving down
 							move_y(other.bbox_bottom-bbox_top+_dir, squash);
 						} else {
 							// Carry while moving up
-							if (_diff > 0) { move_y(other.bbox_top-bbox_bottom+_dir, squash); }
+							 move_y(other.bbox_top-bbox_bottom+_dir, squash);
 						}
 					} else if (ds_list_find_index(other.list_of_riders, id) != -1) {
-						if (_move > 0) { move_y(_dir); }
-						if (_move < 0 && _diff > 0) { move_y(_dir); }
+						move_y(_dir);
 					}
 				}
 					
