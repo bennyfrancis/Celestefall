@@ -61,7 +61,7 @@
 	
 	// Drop through one-way platforms
 	if (k_down && place_meeting(x, y+1, o_solid_oneway)) {
-		y += 2;	
+		y += 5;
 	}
 	
 #endregion
