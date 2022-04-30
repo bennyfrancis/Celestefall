@@ -66,9 +66,9 @@ eg:
 // In create event of player object (child of o_actor)
 //override of parent squash function
 
-function squash() {
-	instance_create_depth(x, y, -1, o_player_squash);
-	instance_destroy(id);
+function squash() {	
+    instance_create_depth(x, y, -1, o_player_squash);
+    instance_destroy(id);
 }
 
 ```
@@ -78,15 +78,15 @@ The function determining whether an Actor is riding a Solid should only be overr
 ```gml
 
 function is_riding(_solid) {
-  //optional check for player wall clinging
-  if (clinging && cling_inst == _solid.id) { return true };
+     //optional check for player wall clinging
+    if (clinging && cling_inst == _solid.id) { return true };
 
-  //actor is on top -- *do not modify*
-  if (place_meeting(x, y+1, _solid)) { return true };
-  //actor is underneath -- *do not modify*
-  if (place_meeting(x, y-1, _solid) && sign(_solid.yspd) == 1) { return true };
-  //actor is moving the same direction horizontally as a moving solid (moving faster than the solid) -- *do not modify*
-  return (place_meeting(x+sign(_solid.xspd), y, _solid) && sign(xspd) == sign(_solid.xspd)); 
+    //actor is on top -- *do not modify*
+    if (place_meeting(x, y+1, _solid)) { return true };
+    //actor is underneath -- *do not modify*
+    if (place_meeting(x, y-1, _solid) && sign(_solid.yspd) == 1) { return true };
+    //actor is moving the same direction horizontally as a moving solid (moving faster than the solid) -- *do not modify*
+    return (place_meeting(x+sign(_solid.xspd), y, _solid) && sign(xspd) == sign(_solid.xspd)); 
 }	
   
 ```
