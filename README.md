@@ -36,7 +36,7 @@ move_y(yspd, collision_event());
 
 ```
 
-To use the default collision event of the parent, omit the collision_event parameter. The default event can be overridden in the child object.
+To use the default collision event of the parent, omit the collision_event parameter. The default event can be overridden by including a collision event script as seen above.
 
 ```gml
 
