@@ -63,7 +63,7 @@ eg:
 
 ```gml
 
-// In create event of player object (child of o_actor)
+//In create event of player object (child of o_actor)
 //override of parent squash function
 
 function squash() {	
@@ -78,7 +78,7 @@ The function determining whether an Actor is riding a Solid should only be overr
 ```gml
 
 function is_riding(_solid) {
-     //optional check for player wall clinging
+    //optional check for player wall clinging
     if (clinging && cling_inst == _solid.id) { return true };
 
     //actor is on top -- *do not modify*
