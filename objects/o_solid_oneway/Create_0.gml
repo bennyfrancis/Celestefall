@@ -6,6 +6,7 @@
 	xspd = 0;
 	xspd_remainder = 0;
 
+	//do not change these!
 	yspd = 0;
 	yspd_remainder = 0;
 	

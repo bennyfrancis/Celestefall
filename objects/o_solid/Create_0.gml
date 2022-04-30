@@ -6,15 +6,14 @@
 	xspd = 0;
 	xspd_remainder = 0;
 
+	//do not change these!
 	yspd = 0;
 	yspd_remainder = 0;
 
-	//optional movement direction var
-	dir = 1;
 	
 #endregion
 
-#region Movemdent and collision
+#region Movement and collision
 
 	//Note: movement for solids should normally be executed in the Begin Step event
 	//pixel by pixel movement and collision checks, carrying fractional remainders to next frame

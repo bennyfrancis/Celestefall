@@ -4,6 +4,7 @@
 	xspd = 0;
 	xspd_remainder = 0;
 
+	//do not change these!
 	yspd = 0;
 	yspd_remainder = 0;
 
@@ -29,6 +30,8 @@
 	function is_riding(_solid) {
 		//optional check for player wall clinging
 		if (clinging && cling_inst == _solid.id) { return true };
+		
+		// Don't change or remove these
 		//actor is on top
 		if (place_meeting(x, y+1, _solid)) { return true };
 		//actor is underneath
