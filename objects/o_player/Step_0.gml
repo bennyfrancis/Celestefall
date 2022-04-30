@@ -8,7 +8,7 @@
 	
 #endregion
 
-#region Movement
+#region Movement calc
 
 	var _dir = k_right - k_left;
 	
@@ -51,6 +51,15 @@
 	} else {
 		clinging = false;
 	}
+	
+	// Drop through one-way platforms
+	if (k_down && place_meeting(x, y+1, o_solid_oneway)) {
+		y += 5;
+	}
+	
+#endregion
+
+#region Move and Collide
 
 	// Move and collide
 	move_x(xspd);
@@ -59,12 +68,7 @@
 		collide_y();
 		show_debug_message("Vertical collision with: " + object_get_name(_inst.object_index));
 	});
-	
-	// Drop through one-way platforms
-	if (k_down && place_meeting(x, y+1, o_solid_oneway)) {
-		y += 5;
-	}
-	
+
 #endregion
 
 #region Animation

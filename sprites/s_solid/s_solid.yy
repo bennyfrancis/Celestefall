@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Solids",
-    "path": "folders/Sprites/Solids.yy",
+    "name": "Celestefall",
+    "path": "folders/Celestefall.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_solid",
