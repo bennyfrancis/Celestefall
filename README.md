@@ -58,7 +58,7 @@ xspd_remainder = 0;
 yspd_remainder = 0;
 ```
 
-The o_actor parent includes a default Squash script in the event the actor object is crushed between two solids. The default event is empty and requires population or overriding within the child object. 
+The o_actor parent includes a default Squash script in the event the Actor object is crushed between two Solid objects. The default event is empty and requires population or overriding within the child object.
 eg:
 
 ```gml
