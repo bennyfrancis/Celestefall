@@ -1,6 +1,6 @@
 # Celestefall - Move and Collide Platformer System for GameMaker 2.3
 
-A parent based move and collide platformer system for GameMaker with moving solids. Based on [Celeste and TowerFall Physics](https://maddythorson.medium.com/celeste-and-towerfall-physics-d24bd2ae0fc5)
+A parent based move and collide platformer system with moving solids made for GameMaker. Based on [Celeste and TowerFall Physics](https://maddythorson.medium.com/celeste-and-towerfall-physics-d24bd2ae0fc5)
 
 This system includes:
 - Simple parenting system for easy implementation in your project
