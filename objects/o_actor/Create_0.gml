@@ -86,11 +86,8 @@
 				//collision with regular solids
 				var collision_instance = instance_place(x, y+_dir, o_solid);
 				if (collision_instance != noone) {
-					//this speed check catches a bug with the player sticking to the platform when they shouldn't
-					//if (yspd > 0 || collision_instance.yspd < 0) {
 						_collision_event(collision_instance);
 						break;
-					//}
 				}
 				
 				//collision with one way solids
