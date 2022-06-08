@@ -103,7 +103,7 @@ bennyfrancis#6146
 - obj_frog (colmeye) for helping optimize and refactor the system and for answering all my questions
 - The awesome people on the GameMaker Discord for all their help and support
 - Pixel Frog who created the free [Treasure Hunters asset pack](https://pixelfrog-assets.itch.io/treasure-hunters) available on itch.io
-- Maddy Thorson who write the article on Celeste and Towerfall move and collide system
+- Maddy Thorson who wrote the article on the Celeste and Towerfall move and collide system
 
 
 ## Lisence
