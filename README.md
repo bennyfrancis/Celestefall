@@ -36,7 +36,7 @@ move_y(yspd, collision_event());
 
 ```
 
-To use the default collision event of the parent, omit the collision_event parameter. The default event can be overridden by including a collision event script as seen above. Collision events pass through the id of the Solid a given Actor is colliding with which can be used to trigger surface based sounds and particles, enable movement, and much more.
+To use the default collision event of the parent, omit the collision_event parameter. The default event can be overridden by including a collision event script as seen above. The custom collision event passes the colliding Solid's instance ID as an argument. This can be used for triggering object specific reactions like determining surface-based particles and audio, and much much more.
 
 ```gml
 
@@ -113,7 +113,7 @@ bennyfrancis#6146
 - Maddy Thorson who wrote the article on the Celeste and Towerfall move and collide system
 
 
-## Lisence
+## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
