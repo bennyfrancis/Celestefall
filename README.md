@@ -36,12 +36,19 @@ move_y(yspd, collision_event());
 
 ```
 
-To use the default collision event of the parent, omit the collision_event parameter. The default event can be overridden by including a collision event script as seen above.
+To use the default collision event of the parent, omit the collision_event parameter. The default event can be overridden by including a collision event script as seen above. Collision events pass through the id of the Solid a given Actor is colliding with which can be used to trigger surface based sounds and particles, enable movement, and much more.
 
 ```gml
 
+//default collision event
 move_x(xspd);
 move_y(yspd);
+
+//custom collision event
+move_y(yspd, function(_inst) {
+    collide_y();
+    show_debug_message("Vertical collision with: " + object_get_name(_inst.object_index));
+});
 
 ```
 
@@ -63,7 +70,7 @@ eg:
 
 ```gml
 
-//In create event of player object (child of o_actor)
+//in create event of player object (child of o_actor)
 //override of parent squash function
 
 function squash() {	
