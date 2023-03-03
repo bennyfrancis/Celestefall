@@ -45,7 +45,7 @@ move_x(xspd);
 move_y(yspd);
 
 //custom collision event
-move_y(yspd, function(_inst) {
+move_y(yspd, function(_inst)) {
     collide_y();
     show_debug_message("Vertical collision with: " + object_get_name(_inst.object_index));
 });
