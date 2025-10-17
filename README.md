@@ -102,7 +102,7 @@ function is_riding(_solid) {
 ## Support and Contribution
 
 Feel free to reach out to me on Discord if you have questions, comments, or are interested in contributing to the project: 
-bennyfrancis#6146
+bennyfrancis
 
 
 ## Acknowledgements 
